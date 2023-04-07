@@ -1,11 +1,13 @@
 // Write your code here
 import {Component} from 'react'
+import './index.css'
 
 class ClickCounter extends Component {
   state = {count: 0}
 
-  OnClicked = () => {
-    this.setState(prevSate => ({count: prevSate.count + 1}))
+  onCount = () => {
+    const {count} = this.state
+    this.setState({count: count + 1})
   }
 
   render() {
@@ -17,7 +19,7 @@ class ClickCounter extends Component {
           <span className="count">{count}</span> times
         </h1>
         <p className="description">Click the button to increase the count!</p>
-        <button className="button" onClick={this.OnClicked}>
+        <button type="button" className="button" onClick={this.onCount}>
           Click Me!
         </button>
       </div>
